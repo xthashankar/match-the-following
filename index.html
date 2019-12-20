@@ -1,0 +1,126 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>Game</title>
+		<link rel="stylesheet" type="text/css" href="css/game.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	</head>
+	<body>
+			
+		<h1>Welcome to the shankar game</h1>
+		<br>
+		<h2>Hint:Match the following(drag & drop)</h2>
+			<!-----------------draggable----------->
+			
+		<div id="draggable" class="move">
+			<ul>
+				<li class="drug" id="Banana1"></li>
+				<li class="drug" id="Guava1"></li>
+				<li class="drug" id="Apple1"></li>
+				<li class="drug" id="Mango1"></li>
+				<li class="drug" id="Litchi1"></li>
+	
+			</ul>
+		</div>
+		
+		
+			<!-----------------droppable----------->
+			
+		<div id="droppable" class="drop">
+			<ul>
+				<li class="circle" id="Apple"><p class="apple">Apple</p></li>
+				<li class="triangle" id="Banana"><p class="banana">Banana</p></li>
+				<li class="shape" id="Guava"><p class="guava">Guava</p></li>
+				<li class="circle" id="Litchi"><p class="litchi">Litchi</p></li>
+				<li class="triangle" id="Mango"><p class="mango">Mango</p></li>
+				
+			</ul>
+		</div>
+		<hr>
+		
+
+			<h3> Copyright @ Wemaker</h3>
+			<h3>made by shankarxtha</h3>
+		
+		
+					<!-----------------scripts----------->
+		
+		<script src="js/jquery-3.3.1.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		
+		<script>
+			$(function(){
+				$(".drug").draggable({
+					scroll:false,
+					revert:'invalid'
+				});
+				
+						
+				//Apple
+				
+					$("#Apple").droppable({
+						accept:"#Apple1",
+						drop: function(){
+							$(".apple").text("Complete!");
+							swal("Congratulations!", "It's a  Apple", "success");
+							$(this).css({"background":"yellow","color":"#000"});
+							$("#Apple1").css("animation","none");
+						}
+					});
+					
+			
+					
+					//Banana
+					
+					$("#Banana").droppable({
+						accept:"#Banana1",
+						drop: function(){
+							$(".banana").text("Complete!");
+							swal("Congratulations!", "It's a  Banana", "success");
+							$(this).css({"background":"yellow","color":"#000"});
+							$("#Banana1").css("animation","none");
+						}
+					});
+					
+					//Guava
+					
+					$("#Guava").droppable({
+						accept:"#Guava1",
+						drop: function(){
+							$(".guava").text("Complete!");
+							swal("Congratulations!", "It's a  Guava", "success");
+							$(this).css({"background":"yellow","color":"#000"});
+							$("#Guava1").css("animation","none");
+						}
+					});
+					
+					//Litchi
+					
+					$("#Litchi").droppable({
+						accept:"#Litchi1",
+						drop: function(){
+							$(".litchi").text("Complete!");
+							swal("Congratulations!", "It's a  Litchi", "success");
+							$(this).css({"background":"yellow","color":"#000"});
+							$("#Litchi1").css("animation","none");
+						}
+					});
+					
+					
+					//Mango
+					
+					$("#Mango").droppable({
+						accept:"#Mango1",
+						drop: function(){
+							$(".mango").text("Complete!");
+							swal("Congratulations!", "It's a  Mango", "success");
+							$(this).css({"background":"yellow","color":"#000"});
+							$("#Mango1").css("animation","none");
+						}
+					});
+				
+			});
+		</script>
+	</body>
+</html>
